@@ -1,0 +1,29 @@
+.image-upload input {
+  margin-bottom: 8px;
+}
+.preview {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.preview-item {
+  position: relative;
+}
+.preview-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.preview-item button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255,0,0,0.7);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}

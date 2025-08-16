@@ -1,0 +1,48 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid #44475a;
+  background: #2a2c3a;
+  color: #515b9a;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #ffdd59;
+  box-shadow: 0 0 6px rgba(255, 221, 89, 0.5);
+}
+
+.clear-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-btn:hover svg {
+  color: #fff176;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}

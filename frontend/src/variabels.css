@@ -1,0 +1,30 @@
+:root {
+  /* Основна палітра — супергеройський вайб */
+  --color-primary: #ff3e3e; /* яскравий червоний, як у Superman/Spider-Man */
+  --color-primary-hover: #cc2f2f; /* глибший відтінок для hover */
+  
+  --color-accent: #ffd600; /* яскраво-жовтий — коміксова енергія, як у Batman logo */
+  --color-accent-hover: #e6c200;
+
+  --color-secondary: #111827; /* темно-синій/чорний фон (модерн, як у Gotham) */
+  --color-secondary-light: #1f2937; /* для карток і блоків */
+
+  --color-text-dark: #f9fafb; /* майже білий для тексту на темному */
+  --color-text-light: #ffffff; /* чисто білий */
+  --color-text-muted: #9ca3af; /* приглушений текст */
+
+  --color-card-bg: #1f2937; /* фон для карток */
+  --color-shadow: rgba(0, 0, 0, 0.5); /* тіні глибші, коміксові */
+
+  --color-danger: #e11d48; /* трохи більш “героїчний” рожево-червоний */
+  --color-danger-hover: #9f1239;
+
+  /* Градієнти */
+  --gradient-hero: linear-gradient(135deg, #ff3e3e, #ffd600); /* для кнопок, рамок */
+  --gradient-dark: linear-gradient(135deg, #0f172a, #1f2937);
+
+  /* Інтервали */
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+}

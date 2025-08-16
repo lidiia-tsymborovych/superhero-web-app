@@ -1,0 +1,82 @@
+@import '../../../variabels.css';
+
+.hero-card-wrapper {
+  flex: 0 0 300px; /* картка завжди 300px */
+  transition: transform 0.2s ease;
+  border-radius: var(--spacing-medium);
+}
+
+.hero-card-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.hero-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Картка */
+.hero-card {
+  border-radius: var(--spacing-small);
+  overflow: hidden;
+  background-color: var(--color-card-bg);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Картинка завжди на всю ширину картки */
+.hero-image {
+  width: 100%;       /* розтягується на ширину картки */
+  height: 250px;     /* фіксована висота */
+  object-fit: cover; /* обрізає зайве, не деформуючи */
+  object-position: top;
+}
+
+/* Назва героя */
+.hero-name {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--color-text-dark);
+  padding: 8px 0;
+  background-color: var(--color-secondary);
+}
+
+/* Кнопка видалення */
+.hero-delete-btn {
+  position: absolute;
+  top: var(--spacing-small);
+  right: var(--spacing-small);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px var(--color-shadow);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+
+.hero-delete-btn:hover {
+  background: var(--color-danger);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px var(--color-shadow);
+}
+
+.hero-delete-btn svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-dark);
+  transition: color 0.3s ease;
+}
+
+.hero-delete-btn:hover svg {
+  color: var(--color-text-light);
+}

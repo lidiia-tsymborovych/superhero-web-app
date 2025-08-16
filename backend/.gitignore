@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Env файли з секретами
+.env
+.env.local
+.env.*.local
+
+# Логи
+npm-debug.log*
+
+
+# Вбудовані IDE/OS файли
+.DS_Store
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Build/дистрибутиви
+dist/
+build/
+out/
+
+# Кеші
+.cache/
+*.tgz
+*.lock
+
+# Тимчасові файли
+*.tmp
+*.temp
+
+# Сторонні пакети
+*.tgz

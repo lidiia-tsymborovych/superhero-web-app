@@ -1,0 +1,91 @@
+@import "../../../variabels.css";
+
+/* корінь */
+.hg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-medium);
+  height: 200px; 
+}
+
+/* доріжка */
+.hg-track {
+  display: flex;
+  gap: var(--spacing-medium);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: var(--spacing-small) 0 var(--spacing-small) var(--spacing-small);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
+  flex: 1 1 auto;
+  height: 100%;
+}
+
+/* карточка прев’ю */
+.hg-item {
+  position: relative;
+  flex: 0 0 auto;
+  aspect-ratio: 1 / 1;
+  height: 100%; 
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 8px var(--color-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hg-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px var(--color-shadow);
+}
+
+.hg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* підказка */
+.hg-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: var(--color-text-light);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.hg-item:hover .hg-hint { opacity: 1; }
+
+/* кнопки навігації */
+.hg-nav {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gradient-hero);
+  color: var(--color-text-dark);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.hg-nav:hover {
+  background: rgb(248, 98, 24);
+}
+.hg-nav--left { order: 0; }
+.hg-nav--right { order: 2; }
+
+
+@media (max-width: 768px) {
+  .hg-item { flex-basis: 100px; height: 100px; }
+  .hg-nav { display: none; } /* на мобайл зазвичай жестами скролять */
+}
