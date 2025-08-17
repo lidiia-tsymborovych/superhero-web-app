@@ -9,15 +9,13 @@
   height: 200px; 
 }
 
-/* доріжка */
 .hg-track {
   display: flex;
   gap: var(--spacing-medium);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: var(--spacing-small) 0 var(--spacing-small) var(--spacing-small);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) transparent;
+  padding: 16px 0;
+  scrollbar-color: var(--hero-color-3) transparent;
   flex: 1 1 auto;
   height: 100%;
 }
@@ -72,11 +70,10 @@
   border-radius: 50%;
   border: none;
   background: var(--gradient-hero);
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease;
 }
 .hg-nav:hover {
   background: rgb(248, 98, 24);
@@ -86,6 +83,7 @@
 
 
 @media (max-width: 768px) {
+  .hg{ height: 120px;}
   .hg-item { flex-basis: 100px; height: 100px; }
-  .hg-nav { display: none; } /* на мобайл зазвичай жестами скролять */
+  .hg-nav { display: none; }
 }

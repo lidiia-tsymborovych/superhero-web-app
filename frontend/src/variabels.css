@@ -1,29 +1,23 @@
 :root {
   /* Основна палітра — супергеройський вайб */
   --color-primary: #ff3e3e; /* яскравий червоний, як у Superman/Spider-Man */
-  --color-primary-hover: #cc2f2f; /* глибший відтінок для hover */
-  
   --color-accent: #ffd600; /* яскраво-жовтий — коміксова енергія, як у Batman logo */
-  --color-accent-hover: #e6c200;
-
+  --color-accent-soft: #ffe680; /* приглушений жовтий для заголовків/hover */
   --color-secondary: #111827; /* темно-синій/чорний фон (модерн, як у Gotham) */
   --color-secondary-light: #1f2937; /* для карток і блоків */
-
-  --color-text-dark: #f9fafb; /* майже білий для тексту на темному */
   --color-text-light: #ffffcd;
-  --color-text-muted: #9ca3af; /* приглушений текст */
 
-  --color-card-bg: #1f2937; /* фон для карток */
-  --color-shadow: rgba(0, 0, 0, 0.5); /* тіні глибші, коміксові */
-
-  --color-danger: #e11d48; /* трохи більш “героїчний” рожево-червоний */
-  --color-danger-hover: #9f1239;
-
-  --hero-color-1: #ff4a3e; /* ближче до червоного */
+  --hero-color-1: #ff4a3e; 
   --hero-color-2: #ff613e;
   --hero-color-3: #ff803e;
   --hero-color-4: #ff9f3e;
   --hero-color-5: #ffbf3e;
+
+    /* Додаткові гармонійні кольори для форми/тексту */
+  --color-input-bg: #222839; /* фон інпутів */
+  --color-input-border: #44475a; /* нейтральна межа інпутів */
+  --color-input-focus: #ffdd57; /* при фокусі інпутів */
+  --color-subtitle: #bfc7d8; /* підзаголовки/менш важливий текст */
 
   /* Градієнти */
   --gradient-hero: linear-gradient(135deg, #ff3e3e, #ffd600); /* для кнопок, рамок */

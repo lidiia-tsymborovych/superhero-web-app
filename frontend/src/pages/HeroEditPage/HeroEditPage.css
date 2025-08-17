@@ -1,35 +1,19 @@
 .hero-edit-page {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #1b1b2f;
-
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
 }
 
 .hero-title {
   font-size: 48px;
   font-weight: bold;
-  color: #ffd700;
+  color: var(--color-text-light);
   margin-bottom: 24px;
   text-align: center;
-  text-shadow: 1px 1px 4px #ff4500;
 }
 
 .hero-section {
   margin-bottom: 32px;
-}
-
-.section-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffdd59;
-  margin-bottom: 12px;
-}
-
-.section-subtitle {
-  font-size: 0.95rem;
-  color: #bbb;
-  margin-bottom: 16px;
 }
 
 .center-text {

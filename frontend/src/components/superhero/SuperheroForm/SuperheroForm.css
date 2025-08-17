@@ -1,93 +1,44 @@
-/* Container форми */
 .superhero-form {
   background: var(--color-secondary-light);
   padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 6px 16px var(--color-shadow);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;
   max-width: 726px;
   margin: 0 auto 40px;
 }
 
-/* Лейбли */
 .superhero-form label {
   display: block;
-  font-weight: bold;
-  color: var(--color-accent);
-  margin-bottom: 4px;
-}
-
-/* Інпути та текстареа */
-.superhero-form input,
-.superhero-form textarea {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: 2px solid #44475a;
-  background: #2a2c3a; 
-  color: #515b9a;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.superhero-form input:focus,
-.superhero-form textarea:focus {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 6px var(--color-accent);
+  color: var(--color-subtitle);
+  font-weight: 600;
+  font-size: 16px;
 }
 
 /* Текст помилки */
-.superhero-form .error {
-  color: var(--color-danger);
-  font-size: 0.85rem;
-  margin-top: 2px;
-}
-
-/* Текстареа */
-.superhero-form textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-/* Секції форми */
-.superhero-form section.hero-section {
-  margin-top: 24px;
+.superhero-form .error-text {
+  color: var(--hero-color-2);
+  font-size: 12px;
 }
 
 /* Заголовки секцій */
 .superhero-form .section-title {
-  font-size: 1.3rem;
-  color: var(--color-accent);
-  margin-bottom: 8px;
+  font-size: 24px;
+  color: var(--color-accent-soft);
+  font-weight: 700;
+  margin-top: 8px;
 }
 
 /* Підзаголовки секцій */
 .superhero-form .section-subtitle {
   font-size: 16px;
-  margin-bottom: 12px;
-  color: #c0c0c0; /* трохи приглушений колір */
+  color: var(--color-subtitle);
+  margin-bottom: 8px;
 }
 
 /* Кнопка Submit */
 .submit-btn {
-  background: var(--gradient-hero);
-  color: var(--color-secondary);
-  font-weight: bold;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
-  margin-top: 24px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-}
-
-.submit-btn:hover {
-  transform: scaleY(1.06);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  color: rgb(255, 246, 186);
+  font-size: 18px;
+  margin-top: 16px;
 }

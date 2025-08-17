@@ -7,13 +7,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #000;
-}
-
 ul, ol {
   list-style: none;
 }
@@ -30,7 +23,7 @@ img {
 
 body {
   background-color: var(--color-secondary);
-  color: var(--color-text-dark);
+  color: var(--color-text-light);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
 }

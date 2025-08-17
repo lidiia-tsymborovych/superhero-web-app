@@ -5,6 +5,7 @@ import type { Superhero } from '../../types/superhero';
 import { getSuperheroById } from '../../api/superheroApi';
 import { Lightbox } from '../../components/common/Lightbox';
 import { SuperHeroGallery } from '../../components/superhero/SuperheroGallery';
+import { Button } from '../../components/common/Button';
 
 const BASE_URL = 'http://localhost:5050/uploads/';
 
@@ -57,32 +58,28 @@ export const HeroDetailsPage = () => {
         </div>
 
         <div className='hero-info'>
-          <div>
+          <div className='hero-info-details'>
             <h1>{hero.nickname}</h1>
             <p>
               <strong>Real Name:</strong> {hero.real_name}
             </p>
-          </div>
-
-          <div className='hero-info-details'>
             <p>
               <strong>Origin:</strong> {hero.origin_description}
             </p>
             <p>
-              <strong>Superpowers:</strong> {hero.superpowers.join(', ')}
+              <strong>Superpowers:</strong> {hero.superpowers}
             </p>
             <p>
               <strong>Catch Phrase:</strong> {hero.catch_phrase}
             </p>
           </div>
 
-          <Link to={`/heroes/edit/${hero._id}`} className='edit-btn-link'>
-            <button className='edit-btn'>Edit Hero</button>
+          <Link to={`/heroes/edit/${hero._id}`}>
+            <Button className='edit-btn'>Edit Hero</Button>
           </Link>
         </div>
       </div>
 
-      {/* Горизонтальна галерея з листанням */}
       <SuperHeroGallery images={images} baseUrl={BASE_URL} onSelect={openAt} />
 
       {selectedImage && (

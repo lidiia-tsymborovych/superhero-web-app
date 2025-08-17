@@ -32,7 +32,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               onClick={handleClear}
               aria-label='Clear input'
             >
-              <X size={18} color='#ffd600' />
+              <X size={18} color='#ffe680' />
             </button>
           )}
         </div>

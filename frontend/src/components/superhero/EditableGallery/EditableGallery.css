@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-bottom: 4px;
 }
 
 .editable-item {
@@ -24,17 +25,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px dashed #ffd600;
+  border: 2px dashed var( --color-input-focus);
   cursor: pointer;
-  color: #ffd600;
+  color: var( --color-input-focus);
   font-weight: bold;
   text-align: center;
   font-size: 16px;
 }
 
 .editable-item.add-item:hover {
-  border-color: #fff176;
-  box-shadow: 0 0 8px rgba(255, 221, 89, 0.7);
+  border-color: var( --color-input-focus);
+  box-shadow: 0 0 8px #ffdd59b3;
 }
 
 .editable-item.add-item input {
@@ -54,12 +55,11 @@
   align-items: center;
   border: none;
   border-radius: 50%;
-  background: #fe6a45;
+  background: var(--hero-color-2);
   color: white;
   font-size: 16px;
   cursor: pointer;
 }
 
 .delete-btn:hover {
-  background: #ff481a;
-}
+background: var(--hero-color-1);}

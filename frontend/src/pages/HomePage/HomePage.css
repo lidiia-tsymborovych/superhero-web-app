@@ -13,13 +13,18 @@
   font-size: 64px;
   font-weight: 700;
   text-align: center;
-  color: var( --color-text-light);
+  color: var(--color-text-light);
+}
+
+.add-hero-link {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 24px;
 }
 
 .add-hero-btn {
   width: 100%;
-  max-width: 600px;
-  margin-bottom: 24px;
 }
 
 .heroes-grid {
@@ -32,7 +37,6 @@
   margin-bottom: 24px;
 }
 
-/* Адаптивність для менших екранів */
 @media (max-width: 768px) {
   .home-page {
     padding: var(--spacing-large) var(--spacing-medium);

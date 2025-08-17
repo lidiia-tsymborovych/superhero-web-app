@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 interface HeroGalleryProps {
   images: string[];
-  baseUrl: string; // наприклад "http://localhost:5050/uploads/"
+  baseUrl: string;
   onSelect: (index: number) => void;
   ariaLabel?: string;
 }

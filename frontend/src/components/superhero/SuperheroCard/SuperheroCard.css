@@ -10,7 +10,7 @@
   flex-direction: column;
   width: 100%;
   border-radius: var(--spacing-medium);
-  background-color: var(--color-secondary-light); /* темний, насичений */
+  background-color: #ffd83e2a;
   overflow: hidden;
   position: relative;
 }

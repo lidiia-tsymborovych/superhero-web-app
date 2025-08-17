@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getSuperheroById, updateSuperhero } from '../../api/superheroApi';
 import { SuperheroForm } from '../../components/superhero/SuperheroForm';
@@ -10,6 +10,8 @@ export const HeroEditPage = () => {
   const [hero, setHero] = useState<Superhero | null>(null);
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (!id) return;
     setLoading(true);
@@ -18,13 +20,13 @@ export const HeroEditPage = () => {
       .finally(() => setLoading(false));
   }, [id]);
 
-  const handleSubmit = async (formData: FormData): Promise<Superhero> => {
+  const handleSubmit = async (formData: FormData) => {
     if (!id) {
       throw new Error('No hero ID');
     }
     const updatedHero = await updateSuperhero(id, formData);
     alert(`Hero ${updatedHero.nickname} updated successfully!`);
-    return updatedHero; 
+    navigate('/');
   };
 
   if (loading) return <p className='center-text'>Loading...</p>;
@@ -32,6 +34,10 @@ export const HeroEditPage = () => {
 
   return (
     <div className='hero-edit-page'>
+      <Link to={`/heroes/${id}`} className='back-link'>
+        ← Back to Hero
+      </Link>
+
       <h1 className='hero-title'>Edit Superhero</h1>
 
       <section className='hero-section'>

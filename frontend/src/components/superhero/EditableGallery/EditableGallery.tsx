@@ -1,13 +1,13 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import './EditableGallery.css';
 import { X } from 'lucide-react';
+import type { ImageValue } from '../SuperheroForm';
 
 interface EditableHeroGalleryProps {
-  images: string[];
+  images: ImageValue[];
   baseUrl: string;
   onDelete: (index: number) => void;
   onAdd: (file: File) => void;
-  newFiles: File[];
 }
 
 export const EditableHeroGallery = ({
@@ -15,9 +15,16 @@ export const EditableHeroGallery = ({
   baseUrl,
   onDelete,
   onAdd,
-  newFiles,
 }: EditableHeroGalleryProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    return () => {
+      images
+        .filter(img => img.type === 'new')
+        .forEach(img => URL.revokeObjectURL(img.previewUrl));
+    };
+  }, [images]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -26,50 +33,34 @@ export const EditableHeroGallery = ({
     }
   };
 
-  const handleDivClick = () => {
-    inputRef.current?.click();
-  };
-
   return (
     <div className='editable-gallery'>
-      {/* існуючі картинки */}
       {images.map((img, i) => (
-        <div key={`existing-${i}`} className='editable-item'>
-          <img src={`${baseUrl}${img}`} alt={`Hero ${i}`} />
+        <div key={i} className='editable-item'>
+          <img
+            src={
+              img.type === 'existing' ? `${baseUrl}${img.url}` : img.previewUrl
+            }
+            alt={`Hero ${i}`}
+          />
           <button
             type='button'
             className='delete-btn'
+            aria-label='Delete image'
             onClick={() => onDelete(i)}
           >
-            ×
+            <X size={14} />
           </button>
         </div>
       ))}
 
-      {/* нові картинки */}
-      {newFiles.map((file, i) => (
-        <div key={`new-${i}`} className='editable-item'>
-          <img src={URL.createObjectURL(file)} alt={`New ${i}`} />
-          <button
-            type='button'
-            className='delete-btn'
-            onClick={() => onDelete(i + images.length)}
-          >
-            <X size={14}/>
-          </button>
-        </div>
-      ))}
-
-      {/* слот для завантаження нової картинки — завжди рендериться */}
       <div
         className={`editable-item add-item ${
-          images.length + newFiles.length === 0 ? 'empty' : ''
+          images.length === 0 ? 'empty' : ''
         }`}
-        onClick={handleDivClick}
+        onClick={() => inputRef.current?.click()}
       >
-        {images.length + newFiles.length === 0
-          ? 'Upload your first photo'
-          : 'Upload Photo'}
+        {images.length === 0 ? 'Upload your first photo' : 'Upload Photo'}
         <input
           type='file'
           accept='image/*'
