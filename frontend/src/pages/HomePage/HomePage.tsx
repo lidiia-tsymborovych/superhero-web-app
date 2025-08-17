@@ -4,6 +4,7 @@ import { useSuperheroes } from '../../hooks/useSuperheroes';
 import { SuperheroCard } from '../../components/superhero/SuperheroCard';
 import { Pagination } from '../../components/common/Pagination';
 import { Button } from '../../components/common/Button';
+// import { Button } from '../../components/common/Button';
 
 export const HomePage = () => {
   const {
@@ -20,8 +21,8 @@ export const HomePage = () => {
     <div className='home-page'>
       <h1 className='home-page-title'>Superheroes</h1>
 
-      <Link to='/heroes/new'>
-        <Button className='add-hero-btn'>Add Hero</Button>
+      <Link to='/heroes/new' style={{ width: '100%', maxWidth: '600px' }}>
+        <Button className='add-hero-btn'>Add New Superhero</Button>
       </Link>
 
       {loading && <p>Loading...</p>}
