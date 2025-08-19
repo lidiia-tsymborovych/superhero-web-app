@@ -40,31 +40,34 @@ root/
 git clone <repo-url>
 cd root
 ```
-3. Create .env file (based on .env.example) with your database connection and other secrets
+2. Create .env file (based on .env.example) with your database connection and other secrets
 
-1. Go to the backend folder:
+3. Go to the backend folder:
 `cd backend`
 
-2. Install dependencies:
+4. Install dependencies:
 `npm install`
 
-5. Frontend
+6. Frontend
 Go to the frontend folder:
 ```cd ..
 cd frontend
 ```
 
-6. Install dependencies:
+7. Install dependencies:
 `npm install`
 
-4. Start backend:
+8. Seed the data:
+`npm run seed`
+
+9. Start backend:
 ```
 cd ..
 cd backend
 npm run dev
 ```
 
-7. Start frontend:
+10. Start frontend:
 ``` cd .. 
 cd frontend
 npm run dev
