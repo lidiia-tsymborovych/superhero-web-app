@@ -26,16 +26,21 @@ root/
 
 ## Tech Stack
 
-- **Frontend:** React, TypeScript, Tailwind CSS, React Hook Form
+- **Frontend:** React, TypeScript, React Hook Form
 - **Backend:** Node.js, Express
-- **Database:** (your choice, e.g., MongoDB)
+- **Database:** (MongoDB)
 - **Other:** Vite, Git
 
 ---
 
 ## Setup Instructions
 
-### Backend
+1. Clone the repository:
+```
+git clone <repo-url>
+cd root
+```
+3. Create .env file (based on .env.example) with your database connection and other secrets
 
 1. Go to the backend folder:
 `cd backend`
@@ -43,29 +48,40 @@ root/
 2. Install dependencies:
 `npm install`
 
-3. Create .env file (based on .env.example) with your database connection and other secrets
-
-4. Start backend:
-`npm run dev`
-
 5. Frontend
 Go to the frontend folder:
-`cd frontend`
+```cd ..
+cd frontend
+```
 
 6. Install dependencies:
 `npm install`
 
+4. Start backend:
+```
+cd ..
+cd backend
+npm run dev
+```
+
 7. Start frontend:
-`npm run dev`
+``` cd .. 
+cd frontend
+npm run dev
+```
 
 ## Assumptions
-Images are stored in backend/uploads and ignored by Git
+Backend runs on http://localhost:5050
 
-.env files contain sensitive information and are ignored by Git
+Frontend runs on http://localhost:5173 (default Vite port)
 
-Backend is assumed to run on http://localhost:5050
+Images are stored in backend/uploads and are committed to Git in this test project (so reviewers can see them)
 
-The frontend communicates with the backend via REST API calls
+.env files contain sensitive info and are ignored by Git
+
+Frontend communicates with backend via REST API calls
+
+Both backend and frontend must be running simultaneously for the app to work
 
 ## Notes
 Async operations are handled with proper error handling
