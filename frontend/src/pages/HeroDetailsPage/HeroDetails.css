@@ -1,16 +1,16 @@
-@import '../../variabels.css';
-
 .hero-details-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px;
+  padding: 16px 32px;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
 .back-link {
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 24px;
   color: var(--hero-color-2);
   font-weight: 600;
   font-size: 18px;
@@ -25,12 +25,11 @@
   display: flex;
   gap: 40px;
   max-height: 400px;
-  height: 100%;
+  align-items: stretch;
 }
 
 .hero-image-container {
   flex: 1 1 40%;
-  /* max-width: 40%; */
   display: flex;
 }
 
@@ -41,34 +40,25 @@
   border-radius: 12px;
 }
 
-.hero-info {
-  position: relative;
+.hero-info-wrapper {
   flex: 1 1 60%;
-  /* max-width: 60%; */
+  border-radius: 16px;
+  padding: 3px;
+  background: var(--gradient-hero);
+  display: flex;
+}
 
+.hero-info {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: var(--spacing-medium);
-  padding: 30px;
-
+  padding: 16px 24px;
   background: var(--gradient-dark);
-  border-radius: 16px;
+  border-radius: 13px;
   color: var(--color-text-light);
-  overflow: hidden;
-}
-
-.hero-info::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 3px;
-  background: var(--gradient-hero);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  pointer-events: none;
+  overflow-y: auto;
 }
 
 .hero-info-details {
@@ -89,6 +79,10 @@
 .hero-info .edit-btn {
   width: 100%;
   font-size: 18px;
+}
+
+.hero-info-gallery .section-title {
+  font-size: 32px;
 }
 
 .hero-gallery {
@@ -127,6 +121,10 @@
     max-height: none;
   }
 
+  .back-link {
+    font-size: 14px;
+  }
+
   .hero-image-container {
     max-width: 100%;
     max-height: 500px;
@@ -134,6 +132,5 @@
 
   .hero-info {
     max-width: 100%;
-    max-height: auto;
   }
 }

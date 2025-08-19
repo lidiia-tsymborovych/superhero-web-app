@@ -1,4 +1,3 @@
-// superheroModel.js
 const mongoose = require('mongoose');
 const superheroSchema = new mongoose.Schema(
   {

@@ -1,11 +1,12 @@
 import './Lightbox.css';
+import { LucideChevronLeft, LucideChevronRight, X } from 'lucide-react';
 import { useEffect } from 'react';
 
 interface Props {
   imageSrc: string;
   onClose: () => void;
-  onPrev?: () => void; // необов’язково
-  onNext?: () => void; // необов’язково
+  onPrev?: () => void;
+  onNext?: () => void;
 }
 
 export const Lightbox = ({ imageSrc, onClose, onPrev, onNext }: Props) => {
@@ -28,7 +29,7 @@ export const Lightbox = ({ imageSrc, onClose, onPrev, onNext }: Props) => {
     >
       <img src={imageSrc} alt='Enlarged' onClick={e => e.stopPropagation()} />
       <button className='close-btn' onClick={onClose} aria-label='Close'>
-        ×
+        <X />
       </button>
 
       {onPrev && (
@@ -40,7 +41,7 @@ export const Lightbox = ({ imageSrc, onClose, onPrev, onNext }: Props) => {
           }}
           aria-label='Previous'
         >
-          ‹
+          <LucideChevronLeft />
         </button>
       )}
       {onNext && (
@@ -52,7 +53,7 @@ export const Lightbox = ({ imageSrc, onClose, onPrev, onNext }: Props) => {
           }}
           aria-label='Next'
         >
-          ›
+          <LucideChevronRight />
         </button>
       )}
     </div>

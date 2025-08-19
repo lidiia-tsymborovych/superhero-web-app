@@ -1,14 +1,18 @@
-.hero-edit-page {
+.hero-edit-create-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .hero-title {
   font-size: 48px;
   font-weight: bold;
   color: var(--color-text-light);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   text-align: center;
 }
 
@@ -16,8 +20,18 @@
   margin-bottom: 32px;
 }
 
-.center-text {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 1.2rem;
+@media (max-width: 768px) {
+  .hero-edit-create-page {
+    padding: 16px;
+  }
+  .hero-title {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+.hero-title {
+    font-size: 32px;
+  }
+
 }

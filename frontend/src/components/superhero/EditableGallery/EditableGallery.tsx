@@ -55,18 +55,22 @@ export const EditableHeroGallery = ({
       ))}
 
       <div
-        className={`editable-item add-item ${
-          images.length === 0 ? 'empty' : ''
-        }`}
+        className='editable-item add-item'
+        role='button'
+        tabIndex={0}
         onClick={() => inputRef.current?.click()}
+        onKeyDown={e => {
+          if (e.key === 'Enter' || e.key === ' ') inputRef.current?.click();
+        }}
       >
-        {images.length === 0 ? 'Upload your first photo' : 'Upload Photo'}
+        Upload Photo
         <input
           type='file'
           accept='image/*'
           onChange={handleFileChange}
           ref={inputRef}
           style={{ display: 'none' }}
+          aria-label='Upload hero image'
         />
       </div>
     </div>

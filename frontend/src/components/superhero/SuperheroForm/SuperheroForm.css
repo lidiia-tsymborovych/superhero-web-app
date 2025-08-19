@@ -16,13 +16,11 @@
   font-size: 16px;
 }
 
-/* Текст помилки */
 .superhero-form .error-text {
   color: var(--hero-color-2);
   font-size: 12px;
 }
 
-/* Заголовки секцій */
 .superhero-form .section-title {
   font-size: 24px;
   color: var(--color-accent-soft);
@@ -30,15 +28,33 @@
   margin-top: 8px;
 }
 
-/* Підзаголовки секцій */
 .superhero-form .section-subtitle {
   font-size: 16px;
   color: var(--color-subtitle);
   margin-bottom: 8px;
 }
 
-/* Кнопка Submit */
 .submit-btn {
   font-size: 18px;
   margin-top: 16px;
+}
+
+@media (max-width: 480px) {
+  .superhero-form {
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .superhero-form .section-title {
+    font-size: 20px;
+  }
+
+  .superhero-form label {
+    font-weight: normal;
+  }
+
+  .superhero-form .section-subtitle {
+    font-size: 16px;
+    margin-top: 4px;
+  }
 }

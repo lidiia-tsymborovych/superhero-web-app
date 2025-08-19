@@ -16,9 +16,20 @@
   border: 1px solid var(--color-input-border);
   background: var(--color-input-bg);
   color: #ffffcd7b;
-  font-size: 1rem;
+  font-size: 16px;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  height: 48px;
+}
+
+textarea.input {
+  min-height: 48px;
+  line-height: 1.8;
+  font-size: 16px;
+  font-family: inherit;
+  letter-spacing: 0;
+  padding: 10px 16px;
+  box-sizing: border-box;
 }
 
 .input:focus {

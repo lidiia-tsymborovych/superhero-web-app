@@ -1,5 +1,3 @@
-@import "../../../variabels.css";
-
 .lightbox {
   position: fixed;
   inset: 0;
@@ -9,7 +7,6 @@
   align-items: center;
   z-index: 1000;
 
-  /* початково було приховано, але тепер ми додаємо .open одразу у компоненті */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -45,6 +42,9 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;

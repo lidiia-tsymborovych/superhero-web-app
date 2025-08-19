@@ -1,5 +1,5 @@
 import './SuperheroGallery.css';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface HeroGalleryProps {
   images: string[];
@@ -15,6 +15,20 @@ export const SuperHeroGallery = ({
   ariaLabel = 'Hero gallery',
 }: HeroGalleryProps) => {
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const [showNav, setShowNav] = useState(false);
+
+    useEffect(() => {
+      const checkScrollable = () => {
+        const el = trackRef.current;
+        if (!el) return;
+        setShowNav(el.scrollWidth > el.clientWidth);
+      };
+
+      checkScrollable();
+      window.addEventListener('resize', checkScrollable);
+
+      return () => window.removeEventListener('resize', checkScrollable);
+    }, [images]);
 
   const scrollBy = (dx: number) => {
     const el = trackRef.current;
@@ -26,13 +40,15 @@ export const SuperHeroGallery = ({
 
   return (
     <div className='hg' aria-label={ariaLabel}>
-      <button
-        className='hg-nav hg-nav--left'
-        aria-label='Scroll left'
-        onClick={() => scrollBy(-300)}
-      >
-        ‹
-      </button>
+      {showNav && (
+        <button
+          className='hg-nav hg-nav--left'
+          aria-label='Scroll left'
+          onClick={() => scrollBy(-300)}
+        >
+          ‹
+        </button>
+      )}
 
       <div className='hg-track' ref={trackRef}>
         {images.map((img, i) => (
@@ -48,18 +64,19 @@ export const SuperHeroGallery = ({
               alt={`Hero image ${i + 1}`}
               loading='lazy'
             />
-            <span className='hg-hint'>Click to zoom</span>
           </button>
         ))}
       </div>
 
-      <button
-        className='hg-nav hg-nav--right'
-        aria-label='Scroll right'
-        onClick={() => scrollBy(300)}
-      >
-        ›
-      </button>
+      {showNav && (
+        <button
+          className='hg-nav hg-nav--right'
+          aria-label='Scroll right'
+          onClick={() => scrollBy(300)}
+        >
+          ›
+        </button>
+      )}
     </div>
   );
 };

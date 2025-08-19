@@ -1,4 +1,3 @@
-// superheroController.js
 const mongoose = require('mongoose');
 const fs = require('fs');
 const Superhero = require('../models/superheroModel');
@@ -17,7 +16,6 @@ function removeFiles(filenames) {
   });
 }
 
-// --- CRUD ---
 exports.getAllSuperheroes = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -65,12 +63,10 @@ exports.updateSuperhero = async (req, res) => {
     const hero = await Superhero.findById(id);
     if (!hero) return res.status(404).json({ message: 'Hero not found' });
 
-    // Додаємо нові фото
     if (req.files && req.files.length) {
       hero.images.push(...req.files.map(f => f.filename));
     }
 
-    // Видаляємо фото, якщо передані removeImages
     if (req.body.removeImages) {
       const remove = Array.isArray(req.body.removeImages)
         ? req.body.removeImages
@@ -79,7 +75,6 @@ exports.updateSuperhero = async (req, res) => {
       removeFiles(remove);
     }
 
-    // Оновлення текстових полів
     [
       'nickname',
       'real_name',
@@ -105,7 +100,6 @@ exports.deleteSuperhero = async (req, res) => {
     const hero = await Superhero.findById(id);
     if (!hero) return res.status(404).json({ message: 'Hero not found' });
 
-    // Видаляємо всі фото з сервера
     removeFiles(hero.images);
 
     await Superhero.findByIdAndDelete(id);

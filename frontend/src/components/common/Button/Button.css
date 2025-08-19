@@ -14,9 +14,8 @@
   text-decoration: none;
 }
 
-/* Hover ефект */
 .btn:hover:not(:disabled) {
-  transform: scale(1.03);
+  transform: scale(1.02);
   border-color: #ffd080;
 }
 

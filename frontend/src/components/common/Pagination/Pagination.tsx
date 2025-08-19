@@ -14,12 +14,10 @@ export const Pagination = ({
   onPageChange,
   className = '',
 }: Props) => {
-  // Кількість видимих сторінок
   const visiblePages = 3;
   let startPage = Math.max(1, page - 1);
   const endPage = Math.min(totalPages, startPage + visiblePages - 1);
 
-  // Перевірка, щоб завжди показувати visiblePages
   if (endPage - startPage + 1 < visiblePages) {
     startPage = Math.max(1, endPage - visiblePages + 1);
   }
