@@ -8,9 +8,9 @@ import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
 
 export const HeroEditPage = () => {
   const { id } = useParams<{ id: string }>();
-  const { hero } = useHero();
+  const { hero } = useHero(id);
   const navigate = useNavigate();
-
+  
   const handleSubmit = async (formData: FormData) => {
     if (!id) return;
 
