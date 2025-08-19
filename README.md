@@ -57,7 +57,7 @@ cd frontend
 7. Install dependencies:
 `npm install`
 
-8. Seed the data:
+8. Seed the data (if needed):
 `npm run seed`
 
 9. Start backend:
